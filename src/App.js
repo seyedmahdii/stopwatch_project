@@ -47,6 +47,7 @@ function App() {
         setSecond(0);
         setMin(0);
         setHour(0);
+        setIsActive(false);
     };
 
     return (
