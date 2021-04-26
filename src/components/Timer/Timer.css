@@ -1,0 +1,33 @@
+.timer {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.time {
+    background-color: #ef2f3c;
+    min-width: 170px;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+}
+.time-value {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: hsl(209, 61%, 16%);
+}
+.time-title {
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+}
+
+@media all and (min-width: 700px) {
+    .timer {
+        flex-direction: row;
+    }
+}
