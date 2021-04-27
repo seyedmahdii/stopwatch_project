@@ -8,31 +8,8 @@ const AppProvider = ({ children }) => {
     let [min, setMin] = useState(0);
     let [hour, setHour] = useState(0);
     let [isActive, setIsActive] = useState(false);
+    let [laps, setLaps] = useState([]);
     let countRef = useRef(null);
-
-    const handleActive = () => {
-        setIsActive(!isActive);
-        if (isActive) {
-            clearInterval(countRef.current);
-        } else {
-            countRef.current = setInterval(() => {
-                setMsecond((msecond) => {
-                    return msecond + 1;
-                });
-            }, 10);
-        }
-    };
-    const handleResetLap = () => {
-        if (isActive) {
-            console.log("object");
-        } else {
-            setMsecond(0);
-            setSecond(0);
-            setMin(0);
-            setHour(0);
-            setIsActive(!isActive);
-        }
-    };
 
     if (msecond === 100) {
         setMsecond(0);
@@ -53,6 +30,37 @@ const AppProvider = ({ children }) => {
         });
     }
 
+    const handleActive = () => {
+        setIsActive(!isActive);
+        if (isActive) {
+            clearInterval(countRef.current);
+        } else {
+            countRef.current = setInterval(() => {
+                setMsecond((msecond) => {
+                    return msecond + 1;
+                });
+            }, 10);
+        }
+    };
+
+    const handleResetLap = () => {
+        if (isActive) {
+            setLaps([...laps, { msecond, second, min, hour }]);
+        } else {
+            // Reset
+            setMsecond(0);
+            setSecond(0);
+            setMin(0);
+            setHour(0);
+            setLaps([]);
+            setIsActive(false);
+        }
+    };
+
+    const numberFormat = (time) => {
+        return time < 10 ? `0${time}` : time;
+    };
+
     return (
         <AppContext.Provider
             value={{
@@ -62,6 +70,7 @@ const AppProvider = ({ children }) => {
                 hour,
                 isActive,
                 countRef,
+                laps,
                 setMsecond,
                 setSecond,
                 setMin,
@@ -69,6 +78,8 @@ const AppProvider = ({ children }) => {
                 setIsActive,
                 handleActive,
                 handleResetLap,
+                setLaps,
+                numberFormat,
             }}
         >
             {children}

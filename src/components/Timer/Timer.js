@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Time from "./Time";
 import "./Timer.css";
+import { AppContext } from "./../../context";
 
-function Timer({ hour, min, second, msecond }) {
+function Timer() {
+    const { msecond, second, min, hour } = useContext(AppContext);
+
     return (
         <div className="timer">
             <Time value={hour} title="hours" />

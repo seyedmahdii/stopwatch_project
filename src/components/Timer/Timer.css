@@ -1,6 +1,5 @@
 .timer {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -14,6 +13,7 @@
     text-transform: uppercase;
     text-align: center;
     border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .time-value {
     font-size: 3.5rem;
@@ -24,10 +24,4 @@
     font-weight: 400;
     font-size: 12px;
     color: white;
-}
-
-@media all and (min-width: 700px) {
-    .timer {
-        flex-direction: row;
-    }
 }

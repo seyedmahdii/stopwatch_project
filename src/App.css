@@ -14,10 +14,11 @@ body {
 }
 
 .app {
-    min-height: 95vh;
+    min-height: 100vh;
     display: grid;
     place-content: center;
     letter-spacing: 5px;
+    margin-top: 0rem;
 }
 
 .app h1 {

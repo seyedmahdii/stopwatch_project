@@ -2,18 +2,24 @@ import React, { useContext } from "react";
 import "./App.css";
 import Timer from "./components/Timer/Timer";
 import Buttons from "./components/Buttons/Buttons";
+
+import Laps from "./components/Laps/Laps";
 import { AppContext } from "./context";
 
 function App() {
-    const { msecond, second, min, hour } = useContext(AppContext);
+    const { laps } = useContext(AppContext);
 
     return (
         <div className="app">
-            <h1>Stopwatch</h1>
+            <div>
+                <h1>Stopwatch</h1>
 
-            <Buttons />
+                <Buttons />
 
-            <Timer msecond={msecond} second={second} min={min} hour={hour} />
+                <Timer />
+            </div>
+
+            {laps.length !== 0 && <Laps />}
         </div>
     );
 }
