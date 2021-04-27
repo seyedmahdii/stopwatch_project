@@ -1,0 +1,25 @@
+.buttons {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+button {
+    background-color: transparent;
+    color: white;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    outline-width: 0;
+    border: 2px solid #ef2f3c;
+    border-radius: 5px;
+    padding: 0.37rem 0.8rem;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+button:hover {
+    background-color: #ef2f3c;
+}
