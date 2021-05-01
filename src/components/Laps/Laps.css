@@ -1,12 +1,22 @@
 .laps {
     margin: 1rem;
-    /* height: 200px; */
-    max-height: 200px;
-    overflow-y: auto;
+}
+tr {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    margin: 0.7rem 0;
+}
+tr > *:first-child {
+    min-width: 6rem;
+    text-align: left;
 }
 th {
     color: #ef2f3c;
+    font-size: 18px;
 }
 td {
     color: white;
+    font-size: 17px;
+    font-weight: 300;
 }

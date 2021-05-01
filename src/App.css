@@ -14,11 +14,10 @@ body {
 }
 
 .app {
-    min-height: 100vh;
     display: grid;
     place-content: center;
     letter-spacing: 5px;
-    margin-top: 0rem;
+    margin-top: 4rem;
 }
 
 .app h1 {
@@ -26,4 +25,10 @@ body {
     color: white;
     font-size: 3rem;
     margin-bottom: 2rem;
+}
+
+@media all and (min-width: 700px) {
+    .app {
+        margin-top: 8rem;
+    }
 }
