@@ -1,6 +1,6 @@
 # Stopwatch Project
 
-Stopwatch project powered with React.js
+Stopwatch project powered by React.js
 <br/>
 run <code>npm i && npm start</code> to start the app.
 <br/><br/>
